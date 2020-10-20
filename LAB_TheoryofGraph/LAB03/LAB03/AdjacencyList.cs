@@ -12,9 +12,11 @@ namespace LAB03
     {
         private LinkedList<int>[] adjList;
         private int nVertex;
+        public Queue<int> res = new Queue<int>(100);
 
         private int x;
         private int y;
+        public string s;
 
 
         public AdjacencyList()
@@ -56,7 +58,6 @@ namespace LAB03
         }
 
 
-        public Queue<int> res = new Queue<int>(100);
 
         public void BFS_Source(int s)
         {
@@ -155,7 +156,6 @@ namespace LAB03
         }
 
 
-        public string s;
         
 
         public void PrintAllPathFromXToYUtils(int u,int d, bool[] isVisited, List<int> localPathList)
@@ -201,10 +201,5 @@ namespace LAB03
             }
         }
 
-
-        public bool isConnectGraph()
-        {
-
-        }
     }
 }
