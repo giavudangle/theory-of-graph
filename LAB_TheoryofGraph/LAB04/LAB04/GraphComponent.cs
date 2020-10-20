@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 
-namespace LAB03
+namespace LAB04
 {
-    class GraphChecker
+    class GraphComponent
     {
         /*
             -> Một đồ thị được gọi là liên thông ( connected ) nếu có đường đi giữa mọi cặp đỉnh phân biệt của đồ thị
@@ -24,22 +24,25 @@ namespace LAB03
 
         private LinkedList<int>[] adjList;
         private int nVertex;
+        static int c = 0;
+        LinkedList<int>[] res = new LinkedList<int>[100];
+
 
         public LinkedList<int>[] AdjList { get => adjList; set => adjList = value; }
         public int NVertex { get => nVertex; set => nVertex = value; }
 
-        public GraphChecker()
+        public GraphComponent()
         {
 
         }
 
         public void ReadGraph(string path)
         {
-            using(StreamReader sr = new StreamReader(path))
+            using (StreamReader sr = new StreamReader(path))
             {
                 NVertex = int.Parse(sr.ReadLine());
                 AdjList = new LinkedList<int>[NVertex];
-                for(int i = 0;i< NVertex; i++)
+                for (int i = 0; i < NVertex; i++)
                 {
                     AdjList[i] = new LinkedList<int>();
                     string tmp = sr.ReadLine();
@@ -75,13 +78,13 @@ namespace LAB03
             {
                 int u = q.Dequeue();
 
-                foreach(int v in AdjList[u - 1])
+                foreach (int v in AdjList[u - 1])
                 {
                     if (visited[v]) continue;
                     visited[v] = true;
                 }
             }
-            for(int x = 1;x<=visited.Length - 1;x++)
+            for (int x = 1; x <= visited.Length - 1; x++)
             {
                 if (visited[x] == false)
                     return false;
@@ -89,9 +92,9 @@ namespace LAB03
             return true;
         }
 
-        public void WriteResult(string path,bool flag)
+        public void WriteResult(string path, bool flag)
         {
-            using(StreamWriter sw = new StreamWriter(path))
+            using (StreamWriter sw = new StreamWriter(path))
             {
                 if (flag)
                     sw.Write("YES");
@@ -100,11 +103,17 @@ namespace LAB03
             }
         }
 
-        public void DFS_Util(int v,bool[] visited)
+
+        public void HandlePrintConnectedComponent()
+        {
+
+        }
+        public void DFS_Util(int v, bool[] visited)
         {
             visited[v] = true;
-            Console.Write(v + " ");
-            foreach(int x in AdjList[v-1])
+            //Console.Write(v + " ");
+            res[c].AddLast(v);
+            foreach (int x in AdjList[v - 1])
             {
                 if (x == 9999) continue;
                 if (visited[x] == false)
@@ -115,27 +124,42 @@ namespace LAB03
         // DFS version
         public int CountConnectedComponents()
         {
-            bool[] visited = new bool[NVertex+1];
+            bool[] visited = new bool[NVertex + 1];
             int count = 0;
             for (int i = 1; i < NVertex + 1; i++)
                 visited[i] = false;
-            for(int i = 1; i < NVertex + 1; i++)
+            for(int i = 0; i < res.Length; i++)
+            {
+                res[i] = new LinkedList<int>();
+            }
+            
+
+            for (int i = 1; i < NVertex + 1; i++)
             {
                 if (visited[i] == false)
                 {
-                    DFS_Util(i,visited);
-                    Console.WriteLine();
+                    DFS_Util(i, visited);
+                    //Console.WriteLine();
+                    c++;
                     count++;
                 }
             }
             return count;
         }
 
-        public void WriteNumberOfConnectedComponent(string path)
+        public void PrintAllConnectedComponents(string path)
         {
             using (StreamWriter sw = new StreamWriter(path))
             {
-                sw.Write(CountConnectedComponents());
+                sw.WriteLine(CountConnectedComponents());
+                foreach(LinkedList<int> x in res)
+                {
+                    foreach(int z in x)
+                    {
+                        sw.Write(z + " ");
+                    }
+                    sw.WriteLine();
+                }
             }
         }
     }
