@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace LAB03
 {
@@ -6,7 +7,16 @@ namespace LAB03
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string path = @"D:\Dotnet_Zone\LAB03\LAB03\DATA.txt";
+            string outPath = @"D:\Dotnet_Zone\LAB03\LAB03\OUTPUT.txt";
+            AdjacencyList adjacencyList = new AdjacencyList();
+            //adjacencyList.ReadGraph(path);
+            //adjacencyList.BFS_Source(adjacencyList.X);
+            //adjacencyList.CountInterconnectionVertex(outPath);
+            //adjacencyList.Custom_BFS()
+            adjacencyList.CustomReadData(path);
+            adjacencyList.PrintAllPaths(adjacencyList.X, adjacencyList.Y);
+            adjacencyList.writeFileAllPaths(outPath);
         }
     }
 }
