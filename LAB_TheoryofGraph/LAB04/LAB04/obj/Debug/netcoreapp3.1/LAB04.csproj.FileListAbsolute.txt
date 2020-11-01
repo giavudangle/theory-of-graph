@@ -11,3 +11,16 @@ C:\Users\Admin\source\repos\LAB04\LAB04\obj\Debug\netcoreapp3.1\LAB04.csproj.Cor
 C:\Users\Admin\source\repos\LAB04\LAB04\obj\Debug\netcoreapp3.1\LAB04.dll
 C:\Users\Admin\source\repos\LAB04\LAB04\obj\Debug\netcoreapp3.1\LAB04.pdb
 C:\Users\Admin\source\repos\LAB04\LAB04\obj\Debug\netcoreapp3.1\LAB04.genruntimeconfig.cache
+D:\HUFLIT Semester III\Graph\theory-of-graph\LAB_TheoryofGraph\LAB04\LAB04\bin\Debug\netcoreapp3.1\LAB04.exe
+D:\HUFLIT Semester III\Graph\theory-of-graph\LAB_TheoryofGraph\LAB04\LAB04\bin\Debug\netcoreapp3.1\LAB04.deps.json
+D:\HUFLIT Semester III\Graph\theory-of-graph\LAB_TheoryofGraph\LAB04\LAB04\bin\Debug\netcoreapp3.1\LAB04.runtimeconfig.json
+D:\HUFLIT Semester III\Graph\theory-of-graph\LAB_TheoryofGraph\LAB04\LAB04\bin\Debug\netcoreapp3.1\LAB04.runtimeconfig.dev.json
+D:\HUFLIT Semester III\Graph\theory-of-graph\LAB_TheoryofGraph\LAB04\LAB04\bin\Debug\netcoreapp3.1\LAB04.dll
+D:\HUFLIT Semester III\Graph\theory-of-graph\LAB_TheoryofGraph\LAB04\LAB04\bin\Debug\netcoreapp3.1\LAB04.pdb
+D:\HUFLIT Semester III\Graph\theory-of-graph\LAB_TheoryofGraph\LAB04\LAB04\obj\Debug\netcoreapp3.1\LAB04.csprojAssemblyReference.cache
+D:\HUFLIT Semester III\Graph\theory-of-graph\LAB_TheoryofGraph\LAB04\LAB04\obj\Debug\netcoreapp3.1\LAB04.AssemblyInfoInputs.cache
+D:\HUFLIT Semester III\Graph\theory-of-graph\LAB_TheoryofGraph\LAB04\LAB04\obj\Debug\netcoreapp3.1\LAB04.AssemblyInfo.cs
+D:\HUFLIT Semester III\Graph\theory-of-graph\LAB_TheoryofGraph\LAB04\LAB04\obj\Debug\netcoreapp3.1\LAB04.csproj.CoreCompileInputs.cache
+D:\HUFLIT Semester III\Graph\theory-of-graph\LAB_TheoryofGraph\LAB04\LAB04\obj\Debug\netcoreapp3.1\LAB04.dll
+D:\HUFLIT Semester III\Graph\theory-of-graph\LAB_TheoryofGraph\LAB04\LAB04\obj\Debug\netcoreapp3.1\LAB04.pdb
+D:\HUFLIT Semester III\Graph\theory-of-graph\LAB_TheoryofGraph\LAB04\LAB04\obj\Debug\netcoreapp3.1\LAB04.genruntimeconfig.cache

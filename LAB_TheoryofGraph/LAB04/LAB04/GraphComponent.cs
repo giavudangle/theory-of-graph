@@ -138,8 +138,7 @@ namespace LAB04
             {
                 if (visited[i] == false)
                 {
-                    DFS_Util(i, visited);
-                    //Console.WriteLine();
+                    DFS_Util(i, visited);                   
                     c++;
                     count++;
                 }

@@ -6,13 +6,28 @@ namespace LAB04
     {
         static void Main(string[] args)
         {
-            string input = @"C:\Users\Admin\source\repos\LAB04\LAB04\INPUT.txt";
-            string output = @"C:\Users\Admin\source\repos\LAB04\LAB04\OUTPUT.txt";
+            string input = @"D:\HUFLIT Semester III\Graph\theory-of-graph\LAB_TheoryofGraph\LAB04\LAB04\INPUT.txt";
+            string output = @"D:\HUFLIT Semester III\Graph\theory-of-graph\LAB_TheoryofGraph\LAB04\LAB04\OUTPUT.txt";
 
-            GraphComponent graphComponent = new GraphComponent();
+            // Bài 1.Liệt kê miền liên thông
+            //GraphComponent graphComponent = new GraphComponent();
+            //graphComponent.ReadGraph(input);
+            //graphComponent.PrintAllConnectedComponents(output);
 
-            graphComponent.ReadGraph(input);
-            graphComponent.PrintAllConnectedComponents(output);
+            // Bài 2.Cạnh cầu và đỉnh khớp
+            //CustomComponent customComponent = new CustomComponent();
+            //customComponent.ReadDataGraph(input);
+            //customComponent.IsBridge(output);
+
+            //Bài 3.Đỉnh khớp
+            //CustomComponent customComponent = new CustomComponent();
+            //customComponent.CustomReadData(input);
+            //customComponent.IsCutVertex(output);
+
+            // Bài 4. Đi trên lưới
+
+
+
 
         }
     }
