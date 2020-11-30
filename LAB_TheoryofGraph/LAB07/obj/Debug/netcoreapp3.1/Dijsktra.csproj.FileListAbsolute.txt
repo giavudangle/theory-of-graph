@@ -1,0 +1,13 @@
+C:\Users\Admin\source\repos\Dijsktra\Dijsktra\bin\Debug\netcoreapp3.1\Dijsktra.exe
+C:\Users\Admin\source\repos\Dijsktra\Dijsktra\bin\Debug\netcoreapp3.1\Dijsktra.deps.json
+C:\Users\Admin\source\repos\Dijsktra\Dijsktra\bin\Debug\netcoreapp3.1\Dijsktra.runtimeconfig.json
+C:\Users\Admin\source\repos\Dijsktra\Dijsktra\bin\Debug\netcoreapp3.1\Dijsktra.runtimeconfig.dev.json
+C:\Users\Admin\source\repos\Dijsktra\Dijsktra\bin\Debug\netcoreapp3.1\Dijsktra.dll
+C:\Users\Admin\source\repos\Dijsktra\Dijsktra\bin\Debug\netcoreapp3.1\Dijsktra.pdb
+C:\Users\Admin\source\repos\Dijsktra\Dijsktra\obj\Debug\netcoreapp3.1\Dijsktra.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\Dijsktra\Dijsktra\obj\Debug\netcoreapp3.1\Dijsktra.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\Dijsktra\Dijsktra\obj\Debug\netcoreapp3.1\Dijsktra.AssemblyInfo.cs
+C:\Users\Admin\source\repos\Dijsktra\Dijsktra\obj\Debug\netcoreapp3.1\Dijsktra.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\Dijsktra\Dijsktra\obj\Debug\netcoreapp3.1\Dijsktra.dll
+C:\Users\Admin\source\repos\Dijsktra\Dijsktra\obj\Debug\netcoreapp3.1\Dijsktra.pdb
+C:\Users\Admin\source\repos\Dijsktra\Dijsktra\obj\Debug\netcoreapp3.1\Dijsktra.genruntimeconfig.cache
