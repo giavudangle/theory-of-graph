@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\source\\repos\\LAB06\\LAB06\\LAB06.csproj": {}
+    "D:\\HUFLIT Semester III\\Graph\\theory-of-graph\\LAB_TheoryofGraph\\LAB06\\LAB06\\LAB06.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\source\\repos\\LAB06\\LAB06\\LAB06.csproj": {
+    "D:\\HUFLIT Semester III\\Graph\\theory-of-graph\\LAB_TheoryofGraph\\LAB06\\LAB06\\LAB06.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\LAB06\\LAB06\\LAB06.csproj",
+        "projectUniqueName": "D:\\HUFLIT Semester III\\Graph\\theory-of-graph\\LAB_TheoryofGraph\\LAB06\\LAB06\\LAB06.csproj",
         "projectName": "LAB06",
-        "projectPath": "C:\\Users\\Admin\\source\\repos\\LAB06\\LAB06\\LAB06.csproj",
+        "projectPath": "D:\\HUFLIT Semester III\\Graph\\theory-of-graph\\LAB_TheoryofGraph\\LAB06\\LAB06\\LAB06.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\source\\repos\\LAB06\\LAB06\\obj\\",
+        "outputPath": "D:\\HUFLIT Semester III\\Graph\\theory-of-graph\\LAB_TheoryofGraph\\LAB06\\LAB06\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
