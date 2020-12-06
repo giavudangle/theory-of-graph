@@ -1,3 +1,4 @@
+
 using System;
 using System.Collections.Generic;
 
@@ -15,7 +16,7 @@ namespace ConsoleApp03
         static void Main(string[] args)
         {
             ReadFileNew();
-            isCircle();
+            Process();
         }
 
         static void ReadFileNew()
@@ -31,7 +32,7 @@ namespace ConsoleApp03
 
             for (long i = 0; i < n; i++)
             {
-                color[i] = 0;
+                color[i] = -1;
               
                 string e = Console.ReadLine();
                 if (e == "") continue;
@@ -68,48 +69,16 @@ namespace ConsoleApp03
             foreach (int u in adj[v])
             {
                 if (visited[u] == false)
-                {
+                {             
                     visited[u] = true;
-                    color[u] = 1 - color[v];                
+                    color[u] = 1 - color[v];
                     if (!isBipartite( u))
                         return false;
-                }           
+                }        
                 else if (color[u] == color[v])
                     return false;
             }
             return true;
-        }
-        static bool circle = false;
-
-
-        static void DFS_Visit(long s)
-        {
-            color[s] = 1;
-
-            foreach (long v in adj[s])           
-                if (color[v] == 0) DFS_Visit(v);
-                else if (color[v] == 1) circle = true;
-
-            color[s] = 2;
-            
-        }
-
-        static void isCircle()
-        {
-           for(int i = 0; i < n; i++)
-            {
-                if(color[i] == 0 )
-                {
-                    DFS_Visit(i);
-                }
-            }
-            if (circle)
-            {
-                Console.WriteLine("YES");
-            }else
-            {
-                Console.WriteLine("NO");
-            }
         }
 
     }
