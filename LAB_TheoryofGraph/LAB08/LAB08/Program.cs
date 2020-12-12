@@ -28,6 +28,17 @@ namespace LAB08
         static bool[] processed;
         static double[] distances;
 
+        //School Update Varriables
+        static int k;
+        static LinkedList<Tuple<int, int>>[] graphCar;
+        static LinkedList<Tuple<int, int>>[] graphWalk;
+        static LinkedList<Tuple<int, int>>[] graphCarReverse;
+
+        static int[] costCar;
+        static int[] costWalk;
+        static int[] costCarReverse;
+
+
 
 
         // Read Graph
@@ -302,6 +313,97 @@ namespace LAB08
             return distances[t]; // Min cost at t ( FROM S -> T)
         }
 
+        /*====================================================================================*/
+        public static void LoadData()
+        {
+            string[] tokens = Console.ReadLine().Split(' ');
+            n = int.Parse(tokens[0]);
+            m = int.Parse(tokens[1]);
+            k = int.Parse(tokens[2]);
+
+            graphCar = new LinkedList<Tuple<int, int>>[n + 1];
+            graphWalk = new LinkedList<Tuple<int, int>>[n + 1];
+            graphCarReverse = new LinkedList<Tuple<int, int>>[n + 1];
+
+       
+
+            for(int i = 1; i <= n; i++)
+            {
+                graphCar[i] = new LinkedList<Tuple<int, int>>();
+                graphWalk[i] = new LinkedList<Tuple<int, int>>();
+                graphCarReverse[i] = new LinkedList<Tuple<int, int>>();
+            }
+
+            for (int i = 1; i <=m; i++)
+            {
+                tokens = Console.ReadLine().Split();
+                int u = int.Parse(tokens[0]);
+                int v = int.Parse(tokens[1]);
+                int walk = int.Parse(tokens[2]);
+                int car = int.Parse(tokens[3]);
+                graphCar[u].AddLast(new Tuple<int, int>(v, car));
+                graphWalk[v].AddLast(new Tuple<int, int>(u, walk));
+                graphCarReverse[v].AddLast(new Tuple<int, int>(u, car));
+              
+                
+            }
+        }
+
+        public static void DijsktraPromise(int start,LinkedList<Tuple<int,int>>[] graph, int[] costByGraph)
+        {          
+            processed = new bool[n + 1];
+
+            for(int i = 1; i <= n; i++)
+            {
+                costByGraph[i] = INF;
+                processed[i] = false;
+            }
+
+            costByGraph[start] = 0;
+
+            for(int k = 1; k <= n; k++)
+            {
+                int a = -1;
+                for (int i = 1; i <= n; i++)
+                    if (processed[i] == false && (a == -1 || costByGraph[a] > costByGraph[i]))
+                        a = i;
+                if (costByGraph[a] == INF) break;
+                processed[a] = true;
+                
+                foreach(Tuple<int,int> edge in graph[a])
+                {
+                    int b = edge.Item1;
+                    int w = edge.Item2;
+
+                    if(costByGraph[b] > costByGraph[a] + w)                    
+                        costByGraph[b] = costByGraph[a] + w;                   
+                }
+            }
+        }
+
+        public static void PromiseAllDijsktra()
+        {
+            costCar = new int[n + 1];
+            costWalk = new int[n + 1];
+            costCarReverse = new int[n + 1];
+
+            DijsktraPromise(1,graphCar,costCar);
+            DijsktraPromise(k,graphWalk,costWalk);
+            DijsktraPromise(n,graphCarReverse,costCarReverse);
+
+            int result = int.MaxValue, _index = -1;
+            for (int i = 2; i <= n - 1; i++)
+                if (costCar[i] + costWalk[i] <= 59 && result > costCarReverse[i] && i != k)
+                {
+                    result = costCarReverse[i];
+                    _index = i;
+                }
+                  
+            Console.WriteLine(result + costCar[_index]);
+        }
+
+
+
 
         static void Main(string[] args)
         {
@@ -344,8 +446,24 @@ namespace LAB08
             //double res  = DijsktraForCircle(s);
             //Console.WriteLine("{0:F2}", res);
 
+            /*
+            Bài 4.Đến trường
+            Gia đình Tuấn sống ở thành phố XYZ.Hàng ngày, mẹ đi ô tô đến cơ quan làm việc còn Tuấn đi bộ đến
+            trường học.Thành phố XYZ có 𝑁 nút giao thông được đánh số từ 1 đến 𝑁. Nhà Tuấn nằm ở nút giao thông
+            1, trường của Tuấn nằm ở nút giao thông 𝐾, cơ quan của mẹ nằm ở nút giao thông 𝑁. Từ nút đến nút có
+            không quá một đường đi một chiều, tất nhiên, có thể có đường đi một chiều khác đi từ nút đến nút.Nếu từ
+            nút đến nút có đường đi thì thời gian đi bộ từ nút đến nút hết 𝑎𝑖𝑗 phút, còn đi ô tô hết 𝑏𝑖𝑗 (0 < 𝑏𝑖𝑗 ≤ 𝑎𝑖𝑗)
+            phút.
+            Hôm nay, Mẹ và Tuấn xuất phát từ nhà lúc 7 giờ.Tuấn phải có mặt tại trường lúc 7 giờ 59 phút để kịp vào
+            lớp học lúc 8 giờ.Tuấn băn khoăn không biết có thể đến trường đúng giờ hay không, nếu không Tuấn sẽ
+            phải nhờ mẹ đưa đi từ nhà đến một nút giao thông nào đó.
+            Trang 37
+            Yêu cầu: Cho biết thông tin về các đường đi của thành phố XYZ. Hãy tìm cách đi để Tuấn đến trường
+            không bị muộn giờ còn mẹ đến cơ quan làm việc sớm nhất.
+            */
 
-
+            LoadData();
+            PromiseAllDijsktra();
         }
     }
 }
