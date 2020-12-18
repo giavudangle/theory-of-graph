@@ -233,9 +233,9 @@ namespace LAB09
 
             /*Bài 3. Prim*/
 
-            ReadPrim();
-            Prim();
-            PrintResultPrim();
+            //ReadPrim();
+            //Prim();
+            //PrintResultPrim();
         }
     }
 }
